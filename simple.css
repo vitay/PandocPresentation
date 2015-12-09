@@ -1,0 +1,207 @@
+/*********************************************
+ * GLOBAL
+ *********************************************/
+.reveal {
+  font-family: 'open sans', Arial, Helvetica;
+  font-size: 20px;
+  font-weight: normal;
+  color: #333333;
+  background: white ;
+}
+  
+.reveal section {
+  text-align: left; 
+}
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    margin: 0 0 0 0;
+    text-transform: none;
+    color: #1D654D;
+}
+                
+.reveal h1 {
+    margin: 10px 0 10px 0;
+    padding: 10px 0 10px 0;
+    line-height: 1.0em;
+    text-align: center; 
+    font-size: 130%;
+    font-weight: bold;
+}              
+.reveal h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center; 
+    padding-top: 0px;
+    font-size: 120%;
+    font-weight: bold;
+    line-height: 1.2em;
+}  
+          
+.reveal h3 {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 0;
+    text-align: center; 
+    font-size: 110%;
+    font-style: italic;
+    color: #333333;
+}
+  
+
+/*********************************************
+ * COLUMNS
+ *********************************************/
+#col-wrapper{
+  display:table;
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#col{
+  display:table-row;
+  margin-left:  5px;
+  margin-right: 5px;
+}
+
+#col>div{
+  display:table-cell
+}
+
+/*********************************************
+ * FIGURES
+ *********************************************/
+.reveal section img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  text-shadow: none;
+  box-shadow: none;
+  text-align: center; 
+  max-width: 90%;
+}
+.reveal figcaption {
+  text-align: center;
+}
+/* Ugly trick for scaling...*/
+.reveal .image5 img {
+  max-width: 5%;
+}
+.reveal .image10 img {
+  max-width: 10%;
+}
+.reveal .image15 img {
+  max-width: 15%;
+}
+.reveal .image20 img {
+  max-width: 20%;
+}
+.reveal .image25 img {
+  max-width: 25%;
+}
+.reveal .image30 img {
+  max-width: 30%;
+}
+.reveal .image35 img {
+  max-width: 35%;
+}
+.reveal .image40 img {
+  max-width: 40%;
+}
+.reveal .image45 img {
+  max-width: 45%;
+}
+.reveal .image50 img {
+  max-width: 50%;
+}
+.reveal .image55 img {
+  max-width: 55%;
+}
+.reveal .image60 img {
+  max-width: 60%;
+}
+.reveal .image65 img {
+  max-width: 65%;
+}
+.reveal .image70 img {
+  max-width: 70%;
+}
+.reveal .image75 img {
+  max-width: 75%;
+}
+.reveal .image80 img {
+  max-width: 80%;
+}
+.reveal .image85 img {
+  max-width: 85%;
+}
+.reveal .image90 img {
+  max-width: 90%;
+}
+.reveal .image95 img {
+  max-width: 95%;
+}
+  
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a:not(.image) {
+  color: #1D654D; 
+}
+
+.reveal a:not(.image):hover { }
+
+.reveal .small {
+    font-size: 60%;
+    line-height: 0.01em;
+}
+
+.reveal blockquote {
+    border: none;
+    box: none;
+    box-shadow: none;
+}
+.reveal pre {
+    width: 90%;
+    background: #fff;
+    border: none;
+    box: none;
+    box-shadow: none;
+    font-size: 80%;
+}
+
+.reveal tt {
+    background: transparent;
+    font-family: 'Courier New';
+    font-size: 80%;
+}
+
+/*********************************************
+ * MATH
+ *********************************************/
+.reveal .math {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 100%;
+}
+
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+    background-color: white; 
+    color: black; 
+    text-align: center; 
+    font-size: 80%;
+}
