@@ -150,3 +150,25 @@ float:center" width="100%" controls>
 </video> 
 
 [endcol]
+
+# Highlighted code
+
+* Code can be highlighted using `highlight.js`:
+
+~~~~ {.python}
+import numpy as np
+
+A = np.ones((10, 10))
+
+B = A + 1.0
+~~~~
+
+~~~~ 
+    ~~~~ {.python}
+    import numpy as np
+
+    A = np.ones((10, 10))
+
+    B = A + 1.0
+    ~~~~
+~~~~
