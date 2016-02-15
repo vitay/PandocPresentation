@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Author name" />
+  <title>Title of the presentation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="./reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="simple.css"/>
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = './reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="./reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<!-- Title slide -->
+<section>
+    <h1 class="title">Title of the presentation</h1>
+    <h2 class="author">Author name</h2>
+    <h3 class="date">Date</h3>
+</section>
+
+<!-- Body -->
+<section id="usage" class="slide level1">
+<h1>Usage</h1>
+<ul>
+<li><p>This package only prepares the basic files to generate a HTML5 + reveal.js presentation from Markdown code using <code>pandoc</code>.</p></li>
+<li><p><code>pandoc</code> of course needs to be installed.</p></li>
+<li><p>To clone the <code>reveal.js</code> library:</p></li>
+</ul>
+<pre><code>make reveal</code></pre>
+<ul>
+<li>To generate the html file:</li>
+</ul>
+<pre><code>make</code></pre>
+<ul>
+<li><p>The <code>Makefile</code> can be modified if you reuse the library/templates between different presentations.</p></li>
+<li><p>The slides can be exported to pdf by opening them in Chrome (only), adding <code>?print-pdf</code> to the address and printing to file. Ex:</p></li>
+</ul>
+<pre><code>file:///home/user/presentationtemplatepandoc/presentation.html?print-pdf#/usage</code></pre>
+</section>
+<section id="basic-markup" class="slide level1">
+<h1>Basic markup</h1>
+    <div id="col-wrapper">
+      <div id="col">
+        <div style="width:50%; float: left;">
+<ul>
+<li><p>You can write in <strong>Bold</strong>, <em>Italic</em> or <code>Literal</code></p></li>
+<li><p><a href="http://www.example.com">Links</a> have two parts, the text and the target.</p></li>
+<li><p>Lists can start with a <code>*</code>, a <code>.</code> or a <code>-</code>.</p></li>
+<li><p>Enumerations start with <code>1.</code>, <code>2.</code>, etc.</p></li>
+<li>Sub-lists or sub-enumerations are possible by indenting:
+<ol type="1">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ol></li>
+<li><p>Equations in LaTeX format:</p></li>
+</ul>
+<p><span class="math display">\[
+\tau \cdot \frac{d r(t)}{dt} + r(t) = 
+\sum_\text{exc} w_i \cdot r_i(t) + B
+\]</span></p>
+<ul>
+<li>Rest of the syntax on <a href="">Pandoc's Markown</a>...</li>
+</ul>
+        </div>
+        <div style="width:50%; float:right;">
+<pre class="md"><code>
+* **Bold**, *Italic* or `Literal`
+
+* [Links](http://www.example.com) 
+
+* Lists `*`, a `.` or a `-`
+
+* Enumerations  `1.`, `2.`, etc.
+
+* Sub-lists or sub-enumerations:
+    1. Item 1
+    2. Item 2
+    3. Item 3  
+
+* Equations in LaTeX format:
+
+$$\tau \cdot \frac{d r(t)}{dt} + r(t) = 
+\sum_\text{exc} w_i \cdot r_i(t) + B$$
+
+* [Pandoc&#39;s Markown]()</code></pre>
+</section>
+<section id="images" class="slide level1 image50">
+<h1>Images</h1>
+<figure>
+<img src="pixies.jpg" alt="Figure 1: A nice figure" /><figcaption><strong>Figure 1</strong>: A nice figure</figcaption>
+</figure>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu"># Images {.image50}</span>
+
+<span class="al">![**Figure 1**: A nice figure](pixies.jpg)</span></code></pre></div>
+<ul>
+<li><p>A figure is basically a link preceded by <code>!</code></p></li>
+<li><p>Setting the slide class to <code>{.image50}</code> defines the width of the image in the slide (available from 5% to 95% in steps of 5%)</p></li>
+</ul>
+</section>
+<section id="two-columns" class="slide level1">
+<h1>Two columns</h1>
+    <div id="col-wrapper">
+      <div id="col">
+        <div style="width:50%; float: left;">
+<ul>
+<li><p>The main limitation of the md <span class="math inline">\(\rightarrow\)</span> html conversion is that the slides have only one column.</p></li>
+<li><p>The script <code>columns.py</code> allows to define two simple columns by surrounding each content with:</p></li>
+</ul>
+<pre><code>[leftcol]
+...
+[rightcol]
+...
+[endcol]</code></pre>
+<ul>
+<li>You can control the width of the left column by defining it in percents:</li>
+</ul>
+<pre><code>[leftcol 40]</code></pre>
+        </div>
+        <div style="width:50%; float:right;">
+<ul>
+<li><p>The right column fills the rest.</p></li>
+<li><p>You will need to install the python bindings to Pandoc.</p></li>
+<li><p>Images scale to the column:</p></li>
+</ul>
+<figure>
+<img src="pixies.jpg" />
+</figure>
+        </div>
+      </div>
+    </div>
+</section>
+<section id="html5-and-videos" class="slide level1">
+<h1>HTML5 and videos</h1>
+    <div id="col-wrapper">
+      <div id="col">
+        <div style="width:50%; float: left;">
+<ul>
+<li><p>You can use HTML code directly, it will be simply escaped by pandoc.</p></li>
+<li><p>Videos (in webm, ogv, mp4) can be inserted using the HTML5 <code>&lt;video&gt;</code> tag:</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;video</span><span class="ot"> width=</span><span class="st">&quot;100%&quot;</span><span class="ot"> controls</span><span class="kw">&gt;</span>
+<span class="kw">&lt;source</span><span class="ot"> src=</span><span class="st">&quot;cover.mp4&quot;</span><span class="ot"> type=</span><span class="st">&quot;video/mp4&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/video&gt;</span></code></pre></div>
+        </div>
+        <div style="width:45%; float:right;">
+<video width="100%" controls>
+<source src="cover.mp4" type="video/mp4">
+</video>
+        </div>
+      </div>
+    </div>
+</section>
+<section id="highlighted-code" class="slide level1">
+<h1>Highlighted code</h1>
+<ul>
+<li>Code can be highlighted using <code>highlight.js</code>:</li>
+</ul>
+    <div id="col-wrapper">
+      <div id="col">
+        <div style="width:50%; float: left;">
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
+    <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">20</span>)
+        <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">10</span>:
+            <span class="bu">print</span>(i)</code></pre></div>
+<pre><code>    ~~~~ {.python}
+    if __name__ == &#39;__main__&#39;:
+        for i in range(20)
+            if i &gt; 10:
+                print(i)
+    ~~~~</code></pre>
+        </div>
+        <div style="width:50%; float:right;">
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">int</span> main(){
+    <span class="kw">for</span>(<span class="dt">int</span> i=<span class="dv">0</span>; i&lt;<span class="dv">20</span>; i++){
+        <span class="kw">if</span>(i&gt;<span class="dv">10</span>)
+            printf(<span class="st">&quot;</span><span class="ch">%i</span><span class="st">&quot;</span>, i)
+    }
+}</code></pre></div>
+<pre><code>    ~~~~{.cpp}
+    int main(){
+        for(int i=0; i&lt;20; i++){
+            if(i&gt;10)
+                printf(&quot;%i&quot;, i)
+        }
+    }
+    ~~~~</code></pre>
+        </div>
+      </div>
+    </div>
+</section>
+
+    </div>
+  </div>
+
+
+  <script src="./reveal.js/lib/js/head.min.js"></script>
+  <script src="./reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,         // Display controls in the bottom right corner
+        progress: false,         // Display a presentation progress bar
+        history: true,          // Push each slide change to the browser history
+        center: true,                       // Vertical centering of slides
+        maxScale: 2.0,                  // Bounds for smallest/largest possible content scale
+        slideNumber: true,                // Display the page number of the current slide
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+//          { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: './reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>
