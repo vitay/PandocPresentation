@@ -55,6 +55,7 @@ $endfor$
   <div class="reveal">
     <div class="slides">
 
+<!-- Title slide -->
 $if(title)$
 <section>
     <h1 class="title">$title$</h1>
@@ -64,10 +65,16 @@ $endif$
 $for(author)$
     <h2 class="author">$author$</h2>
 $endfor$
+$if(date)$
     <h3 class="date">$date$</h3>
+$endif$
+$if(affiliation)$
+    <h3 class="date">$affiliation$</h3>
+$endif$
 </section>
 $endif$
 
+<!-- Body -->
 $body$
 
     </div>
@@ -86,7 +93,7 @@ $body$
         progress: false,         // Display a presentation progress bar
         history: true,          // Push each slide change to the browser history
         center: $if(center)$$center$$else$true$endif$,                       // Vertical centering of slides
-        maxScale: $if(maxScale)$$maxScale$$else$1.5$endif$,                  // Bounds for smallest/largest possible content scale
+        maxScale: $if(maxScale)$$maxScale$$else$2.0$endif$,                  // Bounds for smallest/largest possible content scale
         slideNumber: true,                // Display the page number of the current slide
         theme: $if(theme)$'$theme$'$else$Reveal.getQueryHash().theme$endif$, // available themes are in /css/theme
         transition: $if(transition)$'$transition$'$else$Reveal.getQueryHash().transition || 'none'$endif$, // default/cube/page/concave/zoom/linear/fade/none
@@ -94,7 +101,7 @@ $body$
         // Optional libraries used to extend on reveal.js
         dependencies: [
 //          { src: '$revealjs-url$/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-//          { src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 //          { src: '$revealjs-url$/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 //          { src: '$revealjs-url$/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
 //          { src: '$revealjs-url$/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }

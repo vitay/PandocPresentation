@@ -136,18 +136,16 @@ $$\tau \cdot \frac{d r(t)}{dt} + r(t) =
 * Videos (in webm, ogv, mp4) can be inserted using the HTML5 `<video>` tag:
 
 ~~~~{.html}
-<video style="text-align:center; 
-float:center" width="100%" controls>
+<video width="100%" controls>
 <source src="cover.mp4" type="video/mp4">
-</video> 
+</video>
 ~~~~
 
-[rightcol]
+[rightcol 45]
 
-<br>
-<video style="text-align:center; float:center" width="100%" controls>
+<video width="100%" controls>
 <source src="cover.mp4" type="video/mp4">
-</video> 
+</video>
 
 [endcol]
 
@@ -155,20 +153,44 @@ float:center" width="100%" controls>
 
 * Code can be highlighted using `highlight.js`:
 
+[leftcol]
+
 ~~~~ {.python}
-import numpy as np
-
-A = np.ones((10, 10))
-
-B = A + 1.0
+if __name__ == '__main__':
+    for i in range(20)
+        if i > 10:
+            print(i)
 ~~~~
 
 ~~~~ 
     ~~~~ {.python}
-    import numpy as np
-
-    A = np.ones((10, 10))
-
-    B = A + 1.0
+    if __name__ == '__main__':
+        for i in range(20)
+            if i > 10:
+                print(i)
     ~~~~
 ~~~~
+
+[rightcol]
+
+~~~~{.cpp}
+int main(){
+    for(int i=0; i<20; i++){
+        if(i>10)
+            printf("%i", i)
+    }
+}
+~~~~
+
+~~~~
+    ~~~~{.cpp}
+    int main(){
+        for(int i=0; i<20; i++){
+            if(i>10)
+                printf("%i", i)
+        }
+    }
+    ~~~~
+~~~~
+
+[endcol]

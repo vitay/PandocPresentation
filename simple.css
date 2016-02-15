@@ -67,8 +67,6 @@
 
 #col{
   display:table-row;
-  margin-left:  5px;
-  margin-right: 5px;
 }
 
 #col>div{
@@ -95,60 +93,83 @@
 /* Ugly trick for scaling...*/
 .reveal .image5 img {
   max-width: 5%;
+  width: 5%;
 }
 .reveal .image10 img {
   max-width: 10%;
+  width: 10%;
 }
 .reveal .image15 img {
   max-width: 15%;
+  width: 15%;
 }
 .reveal .image20 img {
   max-width: 20%;
+  width: 20%;
 }
 .reveal .image25 img {
   max-width: 25%;
+  width: 25%;
 }
 .reveal .image30 img {
   max-width: 30%;
+  width: 30%;
 }
 .reveal .image35 img {
   max-width: 35%;
+  width: 35%;
 }
 .reveal .image40 img {
   max-width: 40%;
+  width: 40%;
 }
 .reveal .image45 img {
   max-width: 45%;
+  width: 45%;
 }
 .reveal .image50 img {
   max-width: 50%;
+  width: 50%;
 }
 .reveal .image55 img {
   max-width: 55%;
+  width: 55%;
 }
 .reveal .image60 img {
   max-width: 60%;
+  width: 60%;
 }
 .reveal .image65 img {
   max-width: 65%;
+  width: 65%;
 }
 .reveal .image70 img {
   max-width: 70%;
+  width: 70%;
 }
 .reveal .image75 img {
   max-width: 75%;
+  width: 75%;
 }
 .reveal .image80 img {
   max-width: 80%;
+  width: 80%;
 }
 .reveal .image85 img {
   max-width: 85%;
+  width: 85%;
 }
 .reveal .image90 img {
   max-width: 90%;
+  width: 90%;
 }
 .reveal .image95 img {
   max-width: 95%;
+  width: 95%;
+}
+.reveal .image100 img {
+  max-width: 100%;
+  width: 100%;
 }
   
 
@@ -178,6 +199,7 @@
     box: none;
     box-shadow: none;
     font-size: 80%;
+    line-height: 1.5em;
 }
 
 .reveal tt {
