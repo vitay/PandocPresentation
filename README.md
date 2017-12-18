@@ -10,15 +10,15 @@ Basic structure to create simple and clean HTML presentations using pandoc and r
 
 * To clone the `reveal.js` library:
 
-~~~~
+```
 make reveal
-~~~~
+```
 
 * To generate the html file:
 
-~~~~
+```
 make
-~~~~
+```
 
 * The resulting HTML file has to be opened in a recent and decent browser (i.e. everything except IE).
 
@@ -26,6 +26,12 @@ make
 
 * The slides can be exported to pdf by opening them in Chrome (only), adding `?print-pdf` to the address and printing to file. Ex:
 
-~~~~
+```
 file:///home/user/presentationtemplatepandoc/presentation.html?print-pdf#/usage
-~~~~
+```
+
+* The default css file used for printing by reveal.js is not optimal. `make reveal` copies the given file `pdf.css` into the reveal-js folder, but you can also do it manually:
+
+```
+cp pdf.css reveal.js/css/print
+```

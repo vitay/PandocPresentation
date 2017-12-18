@@ -1,6 +1,8 @@
-% Title of the presentation
-% Author name
-% Date
+---
+title: Using Pandoc for academical presentations
+author: Julien Vitay
+date: December 2017
+---
 
 # Usage
 
@@ -10,23 +12,25 @@
 
 * To clone the `reveal.js` library:
 
-~~~~
+```
 make reveal
-~~~~
+```
 
 * To generate the html file:
 
-~~~~
+```
 make
-~~~~
+```
 
 * The `Makefile` can be modified if you reuse the library/templates between different presentations.
 
 * The slides can be exported to pdf by opening them in Chrome (only), adding `?print-pdf` to the address and printing to file. Ex:
 
-~~~~
+```
 file:///home/user/presentationtemplatepandoc/presentation.html?print-pdf#/usage
-~~~~
+```
+
+* Make sure to copy pdf.css into the reveal.js folder at `reveal.js/css/print`.
 
 # Basic markup
 
@@ -41,6 +45,7 @@ file:///home/user/presentationtemplatepandoc/presentation.html?print-pdf#/usage
 * Enumerations start with `1.`, `2.`, etc.
 
 * Sub-lists or sub-enumerations are possible by indenting:
+
     1. Item 1
     2. Item 2
     3. Item 3  
@@ -52,12 +57,11 @@ $$
 \sum_\text{exc} w_i \cdot r_i(t) + B
 $$
 
-* Rest of the syntax on [Pandoc's Markown]()...
+* Rest of the syntax on [Pandoc's Markown](https://pandoc.org/)...
 
 [rightcol]
 
-~~~~{.md}
-
+```
 * **Bold**, *Italic* or `Literal`
 
 * [Links](http://www.example.com) 
@@ -67,31 +71,35 @@ $$
 * Enumerations  `1.`, `2.`, etc.
 
 * Sub-lists or sub-enumerations:
+
     1. Item 1
     2. Item 2
     3. Item 3  
-
+```
+```
 * Equations in LaTeX format:
 
-$$\tau \cdot \frac{d r(t)}{dt} + r(t) = 
-\sum_\text{exc} w_i \cdot r_i(t) + B$$
+$$
+\tau \cdot \frac{d r(t)}{dt} + r(t) = 
+   \sum_\text{exc} w_i \cdot r_i(t) + B
+$$
 
-* [Pandoc's Markown]()
-~~~~
+* Rest of the syntax on 
+  [Pandoc's Markown](https://pandoc.org/)
+```
 
-# Images {.image50}
+# Images
 
-![**Figure 1**: A nice figure](pixies.jpg)
+![**Figure 1**: A nice image](pixies.jpg){width=50%}
 
-~~~~{.markdown}
-# Images {.image50}
+```
+![**Figure 1**: A nice image](pixies.jpg){width=50%}
+```
 
-![**Figure 1**: A nice figure](pixies.jpg)
-~~~~
+* A figure is basically a link preceded by `!`.
 
-* A figure is basically a link preceded by `!`
+* The width is controlled in percentages only.
 
-* Setting the slide class to `{.image50}` defines the width of the image in the slide (available from 5% to 95% in steps of 5%)
 
 # Two columns
 
@@ -101,25 +109,25 @@ $$\tau \cdot \frac{d r(t)}{dt} + r(t) =
 
 * The script `columns.py` allows to define two simple columns by surrounding each content with:
 
-~~~~
+```
 [leftcol]
 ...
 [rightcol]
 ...
 [endcol]
-~~~~
+```
 
 * You can control the width of the left column by defining it in percents:
 
-~~~~
+```
 [leftcol 40]
-~~~~
+```
 
 [rightcol]
 
 * The right column fills the rest.
 
-* You will need to install the python bindings to Pandoc.
+* You will need to install the Python package `pandocfilters`.
 
 * Images scale to the column:
 
@@ -135,11 +143,11 @@ $$\tau \cdot \frac{d r(t)}{dt} + r(t) =
 
 * Videos (in webm, ogv, mp4) can be inserted using the HTML5 `<video>` tag:
 
-~~~~{.html}
+```html
 <video width="100%" controls>
 <source src="cover.mp4" type="video/mp4">
 </video>
-~~~~
+```
 
 [rightcol 45]
 
@@ -151,46 +159,71 @@ $$\tau \cdot \frac{d r(t)}{dt} + r(t) =
 
 # Highlighted code
 
-* Code can be highlighted using `highlight.js`:
+* Code in many languages can be highlighted using `highlight.js`.
+
+* The provided css uses the Inconsolata fixed font, feel free to change it.
 
 [leftcol]
 
-~~~~ {.python}
-if __name__ == '__main__':
-    for i in range(20)
-        if i > 10:
-            print(i)
-~~~~
+* Code:
 
-~~~~ 
-    ~~~~ {.python}
+```
+    ```python
     if __name__ == '__main__':
         for i in range(20)
             if i > 10:
                 print(i)
-    ~~~~
-~~~~
+    ```
+```
+
+* Result:
+
+```python
+if __name__ == '__main__':
+    for i in range(20)
+        if i > 10:
+            print(i)
+```
+
 
 [rightcol]
 
-~~~~{.cpp}
-int main(){
-    for(int i=0; i<20; i++){
-        if(i>10)
-            printf("%i", i)
-    }
-}
-~~~~
+* Code:
 
-~~~~
-    ~~~~{.cpp}
+
+```
+    ```cpp
     int main(){
         for(int i=0; i<20; i++){
             if(i>10)
                 printf("%i", i)
         }
     }
-    ~~~~
-~~~~
+    ```
+```
+
+* Result:
+
+```cpp
+int main(){
+    for(int i=0; i<20; i++){
+        if(i>10)
+            printf("%i", i)
+    }
+}
+```
+
 
 [endcol]
+
+# Citations
+
+* There is not much control possible over the font size.
+
+* For citations inside a slide, you can use the `citation` command and it will be printed using a smaller font in a left-aligned block.
+
+```
+[citation Source: Einstein, a. (1905). Zur Elektrodynamik bewegter Körper. Annalen der Physik (ser. 4), 17, 891–921]
+``` 
+
+[citation Source: Einstein, a. (1905). Zur Elektrodynamik bewegter Körper. Annalen der Physik (ser. 4), 17, 891–921]

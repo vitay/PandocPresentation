@@ -2,16 +2,16 @@
  * GLOBAL
  *********************************************/
 .reveal {
-  font-family: 'open sans', Arial, Helvetica;
+  font-family: Roboto , 'open sans', Arial, Helvetica;
   font-size: 20px;
   font-weight: normal;
   color: #333333;
-  background: white ;
-}
-  
+  background: #fff;
+} 
 .reveal section {
   text-align: left; 
 }
+
 /*********************************************
  * HEADERS
  *********************************************/
@@ -21,39 +21,55 @@
 .reveal h4,
 .reveal h5,
 .reveal h6 {
+    font-family: Roboto, 'open sans', Arial, Helvetica;
     margin: 0 0 0 0;
     text-transform: none;
     color: #1D654D;
 }
-                
+
 .reveal h1 {
-    margin: 10px 0 10px 0;
-    padding: 10px 0 10px 0;
+    margin-bottom: 20px;
     line-height: 1.0em;
     text-align: center; 
     font-size: 130%;
     font-weight: bold;
+    color: #1D654D;
 }              
-.reveal h2 {
-    margin-top: 10px;
+.reveal .author {
+    margin-top: 50px;
     margin-bottom: 10px;
     text-align: center; 
     padding-top: 0px;
     font-size: 120%;
     font-weight: bold;
-    line-height: 1.2em;
-}  
-          
-.reveal h3 {
-    margin-top: 20px;
-    margin-left: 10px;
-    padding: 0;
+    color: #1D654D;
+}          
+.reveal .date {
+    margin-top: 50px;
+    margin-bottom: 10px;
     text-align: center; 
-    font-size: 110%;
-    font-style: italic;
+    padding-top: 0px;
+    font-size: 100%;
     color: #333333;
+}  
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #1D654D; 
 }
-  
+.reveal a:not(.image) a:not(.sourceLine) {
+  color: #1D654D; 
+}
+
+.reveal a:not(.image):hover { }
+
+.reveal blockquote {
+    border: none;
+    box: none;
+    box-shadow: none;
+}
 
 /*********************************************
  * COLUMNS
@@ -82,124 +98,36 @@
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 0;
+  border: none;
   text-shadow: none;
   box-shadow: none;
   text-align: center; 
   max-width: 90%;
 }
+
 .reveal figcaption {
   text-align: center;
 }
-/* Ugly trick for scaling...*/
-.reveal .image5 img {
-  max-width: 5%;
-  width: 5%;
-}
-.reveal .image10 img {
-  max-width: 10%;
-  width: 10%;
-}
-.reveal .image15 img {
-  max-width: 15%;
-  width: 15%;
-}
-.reveal .image20 img {
-  max-width: 20%;
-  width: 20%;
-}
-.reveal .image25 img {
-  max-width: 25%;
-  width: 25%;
-}
-.reveal .image30 img {
-  max-width: 30%;
-  width: 30%;
-}
-.reveal .image35 img {
-  max-width: 35%;
-  width: 35%;
-}
-.reveal .image40 img {
-  max-width: 40%;
-  width: 40%;
-}
-.reveal .image45 img {
-  max-width: 45%;
-  width: 45%;
-}
-.reveal .image50 img {
-  max-width: 50%;
-  width: 50%;
-}
-.reveal .image55 img {
-  max-width: 55%;
-  width: 55%;
-}
-.reveal .image60 img {
-  max-width: 60%;
-  width: 60%;
-}
-.reveal .image65 img {
-  max-width: 65%;
-  width: 65%;
-}
-.reveal .image70 img {
-  max-width: 70%;
-  width: 70%;
-}
-.reveal .image75 img {
-  max-width: 75%;
-  width: 75%;
-}
-.reveal .image80 img {
-  max-width: 80%;
-  width: 80%;
-}
-.reveal .image85 img {
-  max-width: 85%;
-  width: 85%;
-}
-.reveal .image90 img {
-  max-width: 90%;
-  width: 90%;
-}
-.reveal .image95 img {
-  max-width: 95%;
-  width: 95%;
-}
-.reveal .image100 img {
-  max-width: 100%;
-  width: 100%;
-}
-  
 
 /*********************************************
- * LINKS
+ * CODE
  *********************************************/
-.reveal a:not(.image) {
-  color: #1D654D; 
-}
-
-.reveal a:not(.image):hover { }
-
-.reveal .small {
-    font-size: 60%;
-    line-height: 0.01em;
-}
-
-.reveal blockquote {
-    border: none;
-    box: none;
-    box-shadow: none;
-}
 .reveal pre {
-    width: 90%;
+    max-width: 100%;
+    max-height: 100%;
     background: #fff;
     border: none;
     box: none;
     box-shadow: none;
     font-size: 80%;
-    line-height: 1.5em;
+    color: #333333;
+}
+.reveal code {
+    color: #333333;
+    font-family: Inconsolata;
+}
+.reveal .sourceLine {
+    color: #333333;
 }
 
 .reveal tt {
@@ -209,21 +137,22 @@
 }
 
 /*********************************************
- * MATH
+ * SLIDE NUMBER
  *********************************************/
-.reveal .math {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 100%;
+.reveal .slide-number {
+  color: black; 
+  background-color: white;
 }
 
 
 /*********************************************
- * SLIDE NUMBER
+ * CITATIONS
  *********************************************/
-.reveal .slide-number {
-    background-color: white; 
-    color: black; 
-    text-align: center; 
-    font-size: 80%;
+.reveal .citation{
+    font-size: 50%;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
