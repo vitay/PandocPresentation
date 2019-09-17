@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Author name">
+  <title>Title of the presentation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./assets/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="./assets/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="./assets/reveal.js/css/theme/white.css" id="theme">
+  <link rel="stylesheet" href="./assets/simple.css"/>
+  <!-- Printing and PDF exports -->
+  <!--<script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? './assets/reveal.js/css/print/pdf.css' : './assets/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>-->
+  <!--[if lt IE 9]>
+  <script src="./assets/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <figure>
+    <img src="img/tuc.svg" style="width:35%" />
+  </figure>
+    <h1 class="title">Title of the presentation</h1>
+  <p class="subtitle">Subtitle</p>
+  <p class="author">Author name</p>
+  <p class="date">Date or Institution</p>
+</section>
+
+<section id="first-slide" class="slide level1">
+<h1>First slide</h1>
+<ul>
+<li>Test</li>
+</ul>
+</section>
+<section id="second-slide" class="slide level1">
+<h1>Second slide</h1>
+<ul>
+<li>Test</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="./assets/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: true,
+        // Transition style
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+        pdfMaxPagesPerSlide: 1,
+        hideCursorTime: 5000,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+      menu: { // https://github.com/denehyg/reveal.js-menu
+          side: 'left',
+          width: 'wide',
+          numbers: true,
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
+          useTextContentForMissingTitles: false,
+          hideMissingTitles: true,
+          markers: true,
+          custom: false,
+          themes: false,
+          themesPath: 'css/theme/',
+          transitions: false,
+          openButton: true,
+          openSlideNumber: false,
+          keyboard: true,
+          sticky: false,
+          autoOpen: true,
+          delayInit: false,
+          openOnInit: false,
+          loadIcons: true
+        },
+
+      chalkboard: { 
+        // optionally load pre-recorded chalkboard drawing from file
+        // src: "chalkboard.json",
+        theme: "whiteboard",
+      },
+
+      keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },  // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },  // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },  // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+      },
+
+      // Optional reveal.js plugins
+      dependencies: [
+          { src: './assets/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './assets/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: './assets/reveal.js/plugin/math/math.js', async: true },
+          { src: './assets/reveal.js/plugin/notes/notes.js', async: true },
+          { src: './assets/reveal.js/plugin/mouse-pointer/mouse-pointer.js', async: true },
+          { src: './assets/reveal.js/plugin/menu/menu.js', async: true },
+          { src: './assets/reveal.js/plugin/chalkboard/chalkboard.js', async: true },
+          { src: './assets/reveal.js/plugin/pdfexport/pdfexport.js', async: true },
+        ]
+      });
+    </script>
+    </body>
+</html>

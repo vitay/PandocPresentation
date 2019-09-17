@@ -16,19 +16,19 @@ $endif$
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="$revealjs-url$/css/reset.css">
   <link rel="stylesheet" href="$revealjs-url$/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
-      div.line-block{white-space: pre-line;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
 $if(quotes)$
       q { quotes: "“" "”" "‘" "’"; }
 $endif$
   </style>
 $if(highlighting-css)$
-  <style type="text/css">
+  <style>
 $highlighting-css$
   </style>
 $endif$
@@ -41,13 +41,13 @@ $for(css)$
   <link rel="stylesheet" href="$css$"/>
 $endfor$
   <!-- Printing and PDF exports -->
-  <script>
+  <!--<script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = window.location.search.match( /print-pdf/gi ) ? '$revealjs-url$/css/print/pdf.css' : '$revealjs-url$/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
+  </script>-->
   <!--[if lt IE 9]>
   <script src="$revealjs-url$/lib/js/html5shiv.js"></script>
   <![endif]-->
@@ -67,6 +67,11 @@ $endfor$
 
 $if(title)$
 <section>
+  $if(logo)$
+  <figure>
+    <img src="$logo$" style="width:$if(logo-width)$$logo-width$$else$35%$endif$" />
+  </figure>
+  $endif$
   <h1 class="title">$title$</h1>
 $if(subtitle)$
   <p class="subtitle">$subtitle$</p>
@@ -89,7 +94,6 @@ $body$
     </div>
   </div>
 
-  <script src="$revealjs-url$/lib/js/head.min.js"></script>
   <script src="$revealjs-url$/js/reveal.js"></script>
 
   <script>
@@ -171,6 +175,10 @@ $if(mouseWheel)$
         // Enable slide navigation via mouse wheel
         mouseWheel: $mouseWheel$,
 $endif$
+$if(rollingLinks)$
+        // Apply a 3D roll to links on hover
+        rollingLinks: $rollingLinks$,
+$endif$
 $if(hideAddressBar)$
         // Hides the address bar on mobile devices
         hideAddressBar: $hideAddressBar$,
@@ -198,6 +206,11 @@ $endif$
 $if(parallaxBackgroundImage)$
         // Parallax background image
         parallaxBackgroundImage: '$parallaxBackgroundImage$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+$else$
+$if(background-image)$
+       // Parallax background image
+       parallaxBackgroundImage: '$background-image$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+$endif$
 $endif$
 $if(parallaxBackgroundSize)$
         // Parallax background size
@@ -215,10 +228,10 @@ $if(width)$
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: $width$,
+        width: "$width$",
 $endif$
 $if(height)$
-        height: $height$,
+        height: "$height$",
 $endif$
 $if(margin)$
         // Factor of the display size that should remain empty around the content
@@ -231,11 +244,15 @@ $endif$
 $if(maxScale)$
         maxScale: $maxScale$,
 $endif$
+$if(zoomKey)$
+        // Modifier key used to click-zoom to part of the slide
+        zoomKey: '$zoomKey$',
+$endif$
         pdfMaxPagesPerSlide: 1,
+        hideCursorTime: 5000,
 $if(mathjax)$
         math: {
-          mathjax: '/usr/share/mathjax/MathJax.js',
-          // mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: '$mathjaxurl$',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -252,18 +269,58 @@ $if(mathjax)$
         },
 $endif$
 
-        // Optional reveal.js plugins
-        dependencies: [
+      menu: { // https://github.com/denehyg/reveal.js-menu
+          side: 'left',
+          width: 'wide',
+          numbers: true,
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
+          useTextContentForMissingTitles: false,
+          hideMissingTitles: true,
+          markers: true,
+          custom: false,
+          themes: false,
+          themesPath: 'css/theme/',
+          transitions: false,
+          openButton: true,
+          openSlideNumber: false,
+          keyboard: true,
+          sticky: false,
+          autoOpen: true,
+          delayInit: false,
+          openOnInit: false,
+          loadIcons: true
+        },
+
+      chalkboard: { 
+        // optionally load pre-recorded chalkboard drawing from file
+        // src: "chalkboard.json",
+        theme: "whiteboard",
+      },
+
+      keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },  // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },  // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },  // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+      },
+
+      // Optional reveal.js plugins
+      dependencies: [
           { src: '$revealjs-url$/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true },
 $if(notes-server)$
-          { src: '$revealjs-url$/socket.io/socker.io.js', async: true },
+          { src: '$revealjs-url$/socket.io/socket.io.js', async: true },
           { src: '$revealjs-url$/plugin/notes-server/client.js', async: true },
 $endif$
 $if(mathjax)$
           { src: '$revealjs-url$/plugin/math/math.js', async: true },
 $endif$
-          { src: '$revealjs-url$/plugin/notes/notes.js', async: true }
+          { src: '$revealjs-url$/plugin/notes/notes.js', async: true },
+          { src: '$revealjs-url$/plugin/mouse-pointer/mouse-pointer.js', async: true },
+          { src: '$revealjs-url$/plugin/extra/menu/menu.js', async: true },
+          { src: '$revealjs-url$/plugin/extra/chalkboard/chalkboard.js', async: true },
+          { src: '$revealjs-url$/plugin/pdfexport/pdfexport.js', async: true },
         ]
       });
     </script>
