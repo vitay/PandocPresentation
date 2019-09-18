@@ -1,37 +1,31 @@
-# PresentationTemplatePandoc
+# Presentation template with Pandoc and reveal.js
 
-Basic structure to create simple and clean HTML presentations using pandoc and reveal.js. 
+Basic structure to create simple and clean HTML presentations using pandoc and reveal.js. Reveal.js and some plugins (<https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware>) are added as submodules, so clone this repository as:
+
+```bash
+git clone --recursive https://github.com/vitay/PandocPresentation.git
+```
+
+or call `git submodule update --init --recursive` after cloning.
 
 ## Usage
 
-* This package only prepares the basic files to generate a HTML5 + reveal.js presentation from Markdown code using `pandoc`.
+This package provides the basic files to generate a HTML5 + reveal.js presentation from Markdown code using `pandoc`. `pandoc` of course needs to be installed. 
 
-* `pandoc` of course needs to be installed.
-
-* To clone the `reveal.js` library:
-
-```
-make reveal
-```
-
-* To generate the html file:
+To generate the html file:
 
 ```
 make
 ```
 
-* The resulting HTML file has to be opened in a recent and decent browser (i.e. everything except IE).
+The resulting HTML file has to be opened in a recent and decent browser (i.e. everything except IE).
 
-* The `Makefile` can be modified if you reuse the library/templates between different presentations.
+## Shortcuts
 
-* The slides can be exported to pdf by opening them in Chrome (only), adding `?print-pdf` to the address and printing to file. Ex:
-
-```
-file:///home/user/presentationtemplatepandoc/presentation.html?print-pdf#/usage
-```
-
-* The default css file used for printing by reveal.js is not optimal. `make reveal` copies the given file `pdf.css` into the reveal-js folder, but you can also do it manually:
-
-```
-cp pdf.css reveal.js/css/print
-```
+* `F`: go fullscreen.
+* `S`: open presenter's view.
+* `V`: go black (pause).
+* `M`: opens the menu to select slides.
+* `C`: change the cursor to a pen.
+* `B`: opens a chalkboard.
+* `CAPSLOCK`: change the cursor to a laser pointer.
