@@ -1,6 +1,6 @@
 # Presentation template with Pandoc and reveal.js
 
-Basic structure to create simple and clean HTML presentations using pandoc and reveal.js. Reveal.js and some plugins (<https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware>) are added as submodules, so clone this repository as:
+Basic structure to create simple HTML presentations using Pandoc's markdown and reveal.js. Reveal.js and some plugins (<https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware>) are added as submodules, so clone this repository as:
 
 ```bash
 git clone --recursive https://github.com/vitay/PandocPresentation.git
@@ -30,3 +30,59 @@ The resulting HTML file has to be opened in a recent and decent browser (i.e. ev
 * `C`: change the cursor to a pen.
 * `B`: opens a chalkboard.
 * `CAPSLOCK`: change the cursor to a laser pointer.
+
+## Pandoc's markdown
+
+Refer to <> for most of the syntax.
+
+The YAML header should look like:
+
+```yaml
+---
+title: Title of the presentation
+subtitle: Subtitle
+author: Author name
+date: Date or Institution
+
+logo: img/tuc.svg
+logo-width: 35%
+---
+```
+
+Headers with level 1 (`#`) or 2 (`##`) create new slides, as well as the horizontal ruler (`---`).
+
+Recent versions of `pandoc` allow two columns slides:
+
+```markdown
+::: {.columns}
+::: {.column width="50%"}
+
+* Column 1
+
+:::
+::: {.column width="50%"}
+
+* Column 2
+
+:::
+:::
+``` 
+
+For backward compatibility, the script `assets/columns.py` (you will have to install `pandoc-filters`) allows a simpler variant:
+
+```markdown
+[leftcol 50]
+
+* Column 1
+
+[rightcol 50]
+
+* Column 2
+
+[endcol]
+```
+
+For credits and citation, the following <div> with a font size at 50% is available:
+
+```
+[citation Credits: Julien Vitay <julien-vitay.net>]
