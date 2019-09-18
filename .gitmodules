@@ -1,1 +1,13 @@
 
+[submodule "assets/reveal.js"]
+	path = assets/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
+[submodule "assets/reveal.js-plugins"]
+	path = assets/reveal.js-plugins
+	url = https://github.com/rajgoel/reveal.js-plugins.git
+[submodule "assets/reveal.js-pdfexport"]
+	path = assets/reveal.js-pdfexport
+	url = https://github.com/McShelby/reveal-pdfexport.git
+[submodule "assets/reveal.js-mousepointer"]
+	path = assets/reveal.js-mousepointer
+	url = https://github.com/caiofcm/plugin-revealjs-mouse-pointer.git
