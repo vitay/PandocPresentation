@@ -23,6 +23,7 @@ The resulting HTML file has to be opened in a recent and decent browser (i.e. ev
 ## Shortcuts
 
 * `F`: go fullscreen.
+* `E`: switch to printing mode (`?print-pdf` in the location bar). 
 * `S`: open presenter's view.
 * `V`: go black (pause).
 * `M`: opens the menu to select slides.
