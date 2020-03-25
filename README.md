@@ -22,18 +22,18 @@ The resulting HTML file has to be opened in a recent and decent browser (i.e. ev
 
 ## Shortcuts
 
-* `F`: go fullscreen.
-* `E`: switch to printing mode (`?print-pdf` in the location bar). 
-* `S`: open presenter's view.
-* `V`: go black (pause).
-* `M`: opens the menu to select slides.
-* `C`: change the cursor to a pen.
-* `B`: opens a chalkboard.
-* `CAPSLOCK`: change the cursor to a laser pointer.
+* `f`: goes fullscreen.
+* `e`: switches to printing mode (`?print-pdf` in the location bar). 
+* `s`: opens presenter's view.
+* `v`: goes black (pause).
+* `m`: opens the menu to select slides.
+* `c`: changes the cursor to a pen.
+* `b`: opens a chalkboard.
+* `CAPSLOCK`: changes the cursor to a laser pointer.
 
 ## Pandoc's markdown
 
-Refer to <> for most of the syntax.
+Refer to <https://pandoc.org/MANUAL.html#pandocs-markdown> for most of the syntax.
 
 The YAML header should look like:
 
@@ -82,7 +82,7 @@ For backward compatibility, the script `assets/columns.py` (you will have to ins
 [endcol]
 ```
 
-For credits and citation, the following <div> with a font size at 50% is available:
+For credits and citation, the following `<div>` with a font size at 50% is available:
 
 ```
 [citation Credits: Julien Vitay <julien-vitay.net>]
