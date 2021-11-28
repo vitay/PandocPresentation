@@ -1,5 +1,5 @@
 input_file=presentation.md
-output_file=presentation.html
+output_file=index.html
 
 all: html
 
