@@ -5,7 +5,7 @@ author: Author name
 institution: Institution
 
 logo: img/tuc-new.png
-logo-width: 25%
+logo-width: 35%
 ---
 
 # First slide
