@@ -4,8 +4,8 @@ subtitle: Subtitle
 author: Author name
 institution: Institution
 
-logo: img/tuc.svg
-logo-width: 35%
+logo: img/tuc-new.png
+logo-width: 25%
 ---
 
 # First slide
